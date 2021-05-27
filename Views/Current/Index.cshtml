@@ -1,0 +1,38 @@
+﻿@using TicariOtomasyon.Models.Class
+@model List<Current>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Cari Sayfası</h2>
+
+
+<table class="table table-bordered" style="margin-top:20px;  margin-right:20px;">
+    <tr>
+        <th>Cari Ad Soyad</th>
+     
+        <th>Cari Şehir</th>
+        <th>Cari Mail</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CurrentName @item.CurrentSurname </td>
+       
+            <td>@item.CurrentCity</td>
+              <td>@item.CurrentMail</td>
+            <td><a href="/Current/DeleteCurrent/@item.CurrentID" class="btn btn-danger"> Sil  </a></td>
+            <td><a href="/Current/FindCurrent/@item.CurrentID" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Current/SalesHistory/@item.CurrentID" class="btn btn-default" style="background-color:blueviolet;color:wheat">Satış Geçmişi</a></td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Current/AddCurrent/" class="btn btn-outline-primary">Yeni Cari Ekle</a>
+

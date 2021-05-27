@@ -1,0 +1,24 @@
+﻿@model TicariOtomasyon.Models.Class.Categories
+
+@{
+    ViewBag.Title = "EditCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategori Düzenleme Sayfası</h2>
+
+<hr />
+<br />
+
+@using (Html.BeginForm("AfterEditCategory", "Categories", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Kategori Adı</label>
+        @Html.TextBoxFor(x => x.CategoriesName, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.CategoriesID)
+    </div>
+    <br />
+    <button class="btn btn-outline-success" style="margin-top:15px">Kategori Düzenle</button>
+
+}
+

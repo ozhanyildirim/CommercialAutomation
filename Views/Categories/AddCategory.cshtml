@@ -1,0 +1,16 @@
+﻿@model TicariOtomasyon.Models.Class.Categories
+
+@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Kategori Ekleme Sayfası</h2>
+<hr />
+<br />
+
+<form class="form-group" method="post">
+    <label>Kategori Adı</label>
+    @Html.TextBoxFor(x=>x.CategoriesName,new { @class = "form-control" })
+    <button class="btn btn-primary" style="margin-top:15px">Kategori Ekle</button>
+</form>
