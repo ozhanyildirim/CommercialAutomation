@@ -1,0 +1,36 @@
+﻿@model TicariOtomasyon.Models.Class.ReceiptTrans
+
+@{
+    ViewBag.Title = "NewReceiptTrans";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Fatura Kalem </h2>
+
+<hr />
+<br />
+
+<form class="form-group" method="post">
+    @Html.HiddenFor(x=>x.ReceiptTransID)
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x =>x.Explain, new { @class = "form-control" })
+    <br />
+    <label>Adet</label>
+    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+    <br />
+    <label>Birim Fiyat</label>
+    @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control" })
+    <br />
+    <label>Toplam Fiyat</label>
+    @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+    <br />
+    <label>Fatura ID</label>
+    @Html.TextBoxFor(x => x.ReceiptID, new { @class = "form-control" })
+    <br />
+    
+
+
+
+    <button class="btn btn-primary" style="margin-top:15px">Fatura Kalem Ekle</button>
+</form>
+

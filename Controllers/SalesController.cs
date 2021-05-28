@@ -116,5 +116,11 @@ namespace TicariOtomasyon.Controllers
             return View(values);
         }
 
+        public ActionResult PrintSales(int id)
+        {
+            var values = db.Sales.Where(x => x.SalesID == id).ToList();
+            return View(values);
+        }
+
     }
 }

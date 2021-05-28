@@ -32,8 +32,12 @@ namespace TicariOtomasyon.Models.Class
         [StringLength(50)]
         public string Receiver { get; set; } // teslim alan
 
-        public DateTime Time { get; set; } // saat
+        [Column(TypeName = "char")]
+        [StringLength(5)]
+        public string Time { get; set; } // saat
         public DateTime Date { get; set; } // tarih
+
+        public decimal Total { get; set; }
 
         public ICollection<ReceiptTrans> ReceiptTrans { get; set; } // 1 faturada 1den çok işlem olabilir
 

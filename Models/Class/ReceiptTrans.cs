@@ -18,6 +18,7 @@ namespace TicariOtomasyon.Models.Class
         public decimal UnitPrice { get; set; } // birim fiyat
         public decimal Amount { get; set; } // Tutar
 
-        public Receipt Receipt { get; set; } // fatura işlemi 1 fatura için
+        public int ReceiptID { get; set; } 
+        public virtual Receipt Receipt { get; set; } // fatura işlemi 1 fatura için
     }
 }

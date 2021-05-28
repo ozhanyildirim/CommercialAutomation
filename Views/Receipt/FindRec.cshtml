@@ -1,0 +1,40 @@
+﻿@model TicariOtomasyon.Models.Class.Receipt
+
+@{
+    ViewBag.Title = "FindRec";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Fatura Güncelle </h2>
+
+<hr />
+<br />
+
+@using (Html.BeginForm("EditRec", "Receipt", FormMethod.Post))
+{
+    <label>Seri No</label>
+    @Html.TextBoxFor(x => x.ReceiptSerialNo, new { @class = "form-control" })
+    <br />
+    <label>Sıra No</label>
+    @Html.TextBoxFor(x => x.ReceiptNo, new { @class = "form-control" })
+    <br />
+    <label>Vergi Dairesi</label>
+    @Html.TextBoxFor(x => x.TaxDepartment, new { @class = "form-control" })
+    <br />
+    <label>Tarih</label>
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    <label>Saat</label>
+    @Html.TextBoxFor(x => x.Time, new { @class = "form-control" })
+    <br />
+    <label>Satıcı</label>
+    @Html.TextBoxFor(x => x.Seller, new { @class = "form-control" })
+    <br />
+    <label>Alıcı</label>
+    @Html.TextBoxFor(x => x.Receiver, new { @class = "form-control" })
+    <br />
+
+    @Html.HiddenFor(x=>x.ReceiptID)
+    <button class="btn btn-outline-success" style="margin-top:15px">Fatura Düzenle</button>
+
+}

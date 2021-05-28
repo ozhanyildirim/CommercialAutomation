@@ -133,7 +133,9 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ReceiptController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
+    <Compile Include="Controllers\StaticsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -395,6 +397,7 @@
     <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
     <Content Include="Scripts\DataTables\responsive.semanticui.js" />
     <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
+    <Content Include="Views\Statics\style.css" />
     <Content Include="WebLayout\startbootstrap-sb-admin-2-gh-pages\404.html" />
     <Content Include="WebLayout\startbootstrap-sb-admin-2-gh-pages\blank.html" />
     <Content Include="WebLayout\startbootstrap-sb-admin-2-gh-pages\buttons.html" />
@@ -2324,6 +2327,14 @@
     <Content Include="Views\Sales\AddSales.cshtml" />
     <Content Include="Views\Sales\FindSales.cshtml" />
     <Content Include="Views\Sales\SalesDet.cshtml" />
+    <Content Include="Views\Product\ProductList.cshtml" />
+    <Content Include="Views\Sales\PrintSales.cshtml" />
+    <Content Include="Views\Receipt\Index.cshtml" />
+    <Content Include="Views\Receipt\AddRec.cshtml" />
+    <Content Include="Views\Receipt\FindRec.cshtml" />
+    <Content Include="Views\Receipt\RecDet.cshtml" />
+    <Content Include="Views\Receipt\NewReceiptTrans.cshtml" />
+    <Content Include="Views\Statics\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

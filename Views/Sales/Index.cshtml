@@ -10,18 +10,20 @@
 <br />
 
 
-<table class="table table-bordered" style="margin-top:20px;  margin-right:20px;">
-    <tr>
-        <th>Ürün</th>
-        <th>Alan Müşteri</th>
-        <th>Satış Yapan Personel</th>
-        <th>Adet</th>
-        <th>Fiyat</th>
-        <th>Toplam</th>
-        <th>Tarih</th>
-        <th>Güncelle</th>
-        <th>Detaylar</th>
-    </tr>
+<table id="sales1" class="table table-bordered" style="margin-top:20px;  margin-right:20px;">
+    <thead>
+        <tr>
+            <th>Ürün</th>
+            <th>Alan Müşteri</th>
+            <th>Satış Yapan Personel</th>
+            <th>Adet</th>
+            <th>Fiyat</th>
+            <th>Toplam</th>
+            <th>Tarih</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
     @foreach (var item in Model)
     {
         <tr>
@@ -43,4 +45,20 @@
 <a href="/Sales/AddSales/" class="btn btn-outline-primary">Yeni Satış Ekle</a>
 
 
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+
+$('#sales1').dataTable({});
+
+</script>

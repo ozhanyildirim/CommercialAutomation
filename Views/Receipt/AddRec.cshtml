@@ -1,0 +1,39 @@
+﻿@model TicariOtomasyon.Models.Class.Receipt
+@{
+    ViewBag.Title = "AddRec";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Fatura Girişi</h2>
+
+
+<hr />
+<br />
+
+<form class="form-group" method="post">
+
+    <label>Seri No</label>
+    @Html.TextBoxFor(x => x.ReceiptSerialNo, new { @class = "form-control" })
+    <br />
+    <label>Sıra No</label>
+    @Html.TextBoxFor(x => x.ReceiptNo, new { @class = "form-control" })
+    <br />
+    <label>Vergi Dairesi</label>
+    @Html.TextBoxFor(x => x.TaxDepartment, new { @class = "form-control" })
+    <br />
+    <label>Tarih</label>
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    <label>Saat</label>
+    @Html.TextBoxFor(x => x.Time, new { @class = "form-control" })
+    <br />
+    <label>Satıcı</label>
+    @Html.TextBoxFor(x => x.Seller, new { @class = "form-control" })
+    <br />
+    <label>Alıcı</label>
+    @Html.TextBoxFor(x => x.Receiver, new { @class = "form-control" })
+    <br />
+
+
+    <button class="btn btn-primary" style="margin-top:15px">Fatura Ekle</button>
+</form>

@@ -1,0 +1,36 @@
+﻿@using TicariOtomasyon.Models.Class
+@model List<ReceiptTrans>
+@{
+    ViewBag.Title = "RecDet";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Fatura Detay </h2>
+<hr />
+
+
+<table class="table table-bordered" style="margin-top:20px;  margin-right:20px;">
+    <tr>
+        <th>Açıklama </th>
+        <th>Miktar</th>
+        <th>Birim Fiyat</th>
+        <th>Tutar</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Explain</td>
+            <td>@item.Piece</td>
+            <td>@item.UnitPrice </td>
+            <td>@item.Amount </td>
+
+
+
+        </tr>
+
+    }
+
+</table>
+
+    <a href="/Receipt/NewReceiptTrans/" class="btn btn-default" style="background-color:sienna; color:white"> Yeni Fatura Kalemi</a>

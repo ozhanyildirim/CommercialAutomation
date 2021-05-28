@@ -1,0 +1,48 @@
+﻿@using TicariOtomasyon.Models.Class
+@model List<Receipt>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Faturalar </h2>
+
+<br />
+
+
+<table class="table table-bordered" style="margin-top:20px;  margin-right:20px;">
+    <tr>
+        <th>Seri-Sıra No</th>
+
+        <th>Vergi Dairesi</th>
+        <th>Tarih</th>
+        <th>Saat</th>
+        <th>Satıcı</th>
+        <th>Alıcı</th>
+        <th>Toplam</th>
+
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.ReceiptSerialNo @item.ReceiptNo</td>
+
+    <td>@item.TaxDepartment</td>
+    <td>@item.Date</td>
+    <td>@item.Time</td>
+    <td>@item.Seller</td>
+    <td>@item.Receiver</td>
+    <td>@item.Total</td>
+
+    <td><a href="/Receipt/FindRec/@item.ReceiptID" class="btn btn-warning">Güncelle</a></td>
+    <td><a href="/Receipt/RecDet/@item.ReceiptID" class="btn btn-default" style="background-color:coral; color : white" ,>Detaylar</a></td>
+</tr>
+    }
+
+</table>
+
+<a href="/Receipt/AddRec/" class="btn btn-outline-primary">Yeni Fatura Ekle</a>
+
