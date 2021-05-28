@@ -57,7 +57,7 @@ namespace TicariOtomasyon.Controllers
             ViewBag.v13 = val13;
 
             var val14 = db.Sales.Sum(x => x.TotalPrice).ToString(); // kasadaki toplam para
-            ViewBag.v14 = val14;
+            ViewBag.v14 =  val14;
 
             DateTime today = DateTime.Today;
             var val15 = db.Sales.Count(x => x.Date == today).ToString();    //bugün kaç satış oldu
