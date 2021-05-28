@@ -1,0 +1,33 @@
+﻿@model TicariOtomasyon.Models.Class.Employee
+
+@{
+    ViewBag.Title = "FindEmp";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Personel Düzenleme Sayfası</h2>
+
+<hr />
+
+@using (Html.BeginForm("EditEmp", "Employee", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.EmployeeID)
+    <label>Personel Adı</label>
+    @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+    <br />
+    <label>Personel Soyadı</label>
+    @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control" })
+    <br />
+    <label>Personel Resim</label>
+    @Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })
+    <br />
+
+    <label>Departman</label>
+    @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.val1, new { @class = "form-control" })
+
+    <br />
+
+
+
+    <button class="btn btn-outline-warning" style="margin-top:15px">Personel Güncelle</button>
+}

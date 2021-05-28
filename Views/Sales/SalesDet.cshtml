@@ -1,0 +1,43 @@
+﻿@using TicariOtomasyon.Models.Class
+@model List<Sales>
+@{
+    ViewBag.Title = "SalesDet";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Satış Detaylar</h2>
+
+<br />
+
+
+<table class="table table-bordered" style="margin-top:20px;  margin-right:20px;">
+    <tr>
+        <th>Ürün</th>
+        <th>Müşteri</th>
+        <th>Personel</th>
+        <th>Fiyat</th>
+        <th>Adet</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+   
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Products.ProductName</td>
+            <td>@item.Currents.CurrentName @item.Currents.CurrentSurname</td>
+            <td>@item.Employees.EmployeeName @item.Employees.EmployeeSurname</td>
+            <td>@item.Price</td>
+            <td>@item.Piece</td>
+            <td>@item.TotalPrice</td>
+            <td>@item.Date</td>
+
+
+
+        </tr>
+    }
+
+</table>
+
+<a href="#" class="btn btn-default" style="background-color:darkslategrey; color:white"> Yazdır  </a>

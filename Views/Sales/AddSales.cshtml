@@ -1,0 +1,40 @@
+﻿@model TicariOtomasyon.Models.Class.Sales
+
+@{
+    ViewBag.Title = "AddSales";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Satış Ekle</h2>
+
+
+<hr />
+<br />
+
+<form class="form-group" method="post">
+    <label>Ürün Adı</label>
+    @Html.DropDownListFor(x => x.ProductID, (List<SelectListItem>)ViewBag.val1,  new { @class = "form-control" })
+    <br />
+    <label>Alan Müşteri </label>
+    @Html.DropDownListFor(x => x.CurrentID, (List<SelectListItem>)ViewBag.val3 , new { @class = "form-control" })
+    <br />
+    <label>Satış Yapan Personel</label>
+    @Html.DropDownListFor(x => x.EmployeeID, (List<SelectListItem>)ViewBag.val2, new { @class = "form-control" })
+    <br />   
+    <label>Adet</label>
+    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+    <br /> 
+    <label>Fiyat</label>
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    <label>Toplam</label>
+    @Html.TextBoxFor(x => x.TotalPrice, new { @class = "form-control" })
+    <br /> 
+    <label>Tarih</label>
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+   
+
+
+    <button class="btn btn-primary" style="margin-top:15px">Satış Ekle</button>
+</form>
