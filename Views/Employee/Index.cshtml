@@ -6,30 +6,40 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+
 <h2>Personel Sayfası</h2>
 
 <br />
+@foreach (var item in Model)
+{
+    <div class="card shadow float-left mr-3 mb-3" style="width:14rem;">
+
+        <img class="card-img-top" src="@item.EmployeeImage" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@item.EmployeeName @item.EmployeeSurname</h5>
+            <h7 class="card-title">@item.Department.DepartmentName</h7>
+            <br />
+            <br />
+            <a href="/Employee/FindEmp/@item.EmployeeID" class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></a>
+           
+            <a href="/Department/EmployeeSales/@item.EmployeeID" class="btn btn-default btn-icon-split" style="background-color:coral;color:white">
+                <span class="icon text-white-50">
+                    <i class="fas fa-shopping-cart"></i>
+                </span>
+                <span class="text">Satışlar</span>
+            </a>
+        </div>
+
+
+    </div>
+
+
+}
+
+
 
 
 <table class="table table-bordered" style="margin-top:20px;  margin-right:20px;">
-    <tr>
-        <th>Personel Adı Soyadı</th>
-        <th>Departman</th>
-        <th>Resim</th>
-        <th>Güncelle</th>
-        <th>Satışlar</th>
-    </tr>
-    @foreach (var item in Model)
-    {
-<tr>
-    <td>@item.EmployeeName @item.EmployeeSurname</td>
-    <td>@item.EmployeeImage</td>
-    <td>@item.Department.DepartmentName</td>
-
-    <td><a href="/Employee/FindEmp/@item.EmployeeID" class="btn btn-warning">Güncelle</a></td>
-    <td><a href="/Department/EmployeeSales/@item.EmployeeID" class="btn btn-default" style="background-color:coral; color : white" ,>Satışlar</a></td>
-</tr>
-    }
 
 </table>
 

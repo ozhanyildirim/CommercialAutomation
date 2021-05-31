@@ -7,34 +7,35 @@
 
 <h2>Ürün Listesi </h2>
 
+
+
+@foreach (var item in Model)
+{
+    <div class="card shadow float-left mr-3 mb-3" style="width:14rem;">
+        <div class="card-header py-3">
+            <span class="m-0 font-weight-bold text-primary"> @item.ProductName</span>
+        </div>
+        <img class="card-img-top" src="@item.ProductImage" alt="Card image cap">
+
+        <div class="card-body">
+            <h5 class="card-title"> @item.ProductBrand</h5>
+            <p> Kategori : @item.Categories.CategoriesName </p>
+            <p> Alış Fiyat : @item.PurchasePrice </p>
+            <p> Satış Fiyat : @item.SalePrice </p>
+            <p> Stok  : @item.ProductStock </p>
+             <a href="/Product/DeleteProduct/@item.ProductID" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+
+            <a href="/Product/GetProduct/@item.ProductID" class="btn btn-warning btn-icon-split ">
+                <span class="icon ">
+                    <i class="fas fa-edit"></i>
+                </span>
+                <span class="text">Düzenle</span>
+            </a>
+        </div>
+
+
+    </div>
+}
 <table class="table table-bordered">
-    <tr>
-
-        <th>Ürün</th>
-        <th>Marka</th>
-        <th>Stok</th>
-        <th>Alış Fiyat</th>
-        <th>Satış Fiyat</th>
-        <th>Kategori</th>
-        <th>Görsel</th>
-        <th>Sil</th>
-        <th>Düzenle</th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.ProductName</td>
-            <td>@item.ProductBrand</td>
-            <td>@item.ProductStock</td>
-            <td>@item.PurchasePrice</td>
-            <td>@item.SalePrice</td>
-            <td>@item.Categories.CategoriesName</td>
-            <td>@item.ProductImage</td>
-            <td> <a class="btn btn-danger" href="/Product/DeleteProduct/@item.ProductID">Sil</a> </td> 
-            <td> <a class="btn btn-warning" href="/Product/GetProduct/@item.ProductID">Güncelle</a> </td>
-           
-        </tr>
-    }
 </table>
-
 <a href="/Product/AddProduct/" class="btn btn-outline-primary">Yeni Ürün Ekle</a>

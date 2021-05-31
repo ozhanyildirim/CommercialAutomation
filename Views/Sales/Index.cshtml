@@ -9,56 +9,135 @@
 
 <br />
 
+<!DOCTYPE html>
+<html lang="en">
 
-<table id="sales1" class="table table-bordered" style="margin-top:20px;  margin-right:20px;">
-    <thead>
-        <tr>
-            <th>Ürün</th>
-            <th>Alan Müşteri</th>
-            <th>Satış Yapan Personel</th>
-            <th>Adet</th>
-            <th>Fiyat</th>
-            <th>Toplam</th>
-            <th>Tarih</th>
-            <th>Güncelle</th>
-            <th>Detaylar</th>
-        </tr>
-    </thead>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.Products.ProductName </td>
-            <td>@item.Currents.CurrentName @item.Currents.CurrentSurname</td>
-            <td>@item.Employees.EmployeeName @item.Employees.EmployeeSurname</td>
-            <td>@item.Piece</td>
-            <td>@item.Price</td>
-            <td>@item.TotalPrice</td>
-            <td>@item.Date</td>
+<head>
 
-            <td><a href="/Sales/FindSales/@item.SalesID" class="btn btn-warning">Güncelle</a></td>
-            <td><a href="/Sales/SalesDet/@item.SalesID" class="btn btn-default" style="background-color:teal; color : white" ,>Detaylar</a></td>
-        </tr>
-    }
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-</table>
+    <title>SB Admin 2 - Tables</title>
 
-<a href="/Sales/AddSales/" class="btn btn-outline-primary">Yeni Satış Ekle</a>
+    <!-- Custom fonts for this template -->
+    <link href="   ~/WebLayout/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
 
 
-<link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="   ~/WebLayout/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Custom styles for this page -->
+    <link href="   ~/WebLayout/startbootstrap-sb-admin-2-gh-pages/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
-<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+</head>
 
-<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<body id="page-top">
 
-<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 
-<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+        <div id="content-wrapper" class="d-flex flex-column">
 
-<script>
+            <!-- Main Content -->
+            <div id="content">
 
-$('#sales1').dataTable({});
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
 
-</script>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Satış Hareketleri</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+
+                                <table id="dataTable" class="table table-bordered" style="margin-top:20px;  margin-right:20px;">
+                                    <thead>
+                                        <tr>
+                                            <th>Ürün</th>
+                                            <th>Alan Müşteri</th>
+                                            <th>Satış Yapan Personel</th>
+                                            <th>Adet</th>
+                                            <th>Fiyat</th>
+                                            <th>Toplam</th>
+                                            <th>Tarih</th>
+                                            <th>Güncelle</th>
+                                            <th>Detaylar</th>
+                                        </tr>
+                                    </thead>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.Products.ProductName </td>
+                                            <td>@item.Currents.CurrentName @item.Currents.CurrentSurname</td>
+                                            <td>@item.Employees.EmployeeName @item.Employees.EmployeeSurname</td>
+                                            <td>@item.Piece</td>
+                                            <td>@item.Price</td>
+                                            <td>@item.TotalPrice</td>
+                                            <td>@item.Date</td>
+
+                                            <td><a href="/Sales/FindSales/@item.SalesID" class="btn btn-warning">Güncelle</a></td>
+                                            <td><a href="/Sales/SalesDet/@item.SalesID" class="btn btn-default" style="background-color:teal; color : white" ,>Detaylar</a></td>
+                                        </tr>
+                                    }
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="   ~/WebLayout/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
+    <script src="   ~/WebLayout/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="   ~/WebLayout/startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="   ~/WebLayout/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="   ~/WebLayout/startbootstrap-sb-admin-2-gh-pages/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="   ~/WebLayout/startbootstrap-sb-admin-2-gh-pages/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="   ~/WebLayout/startbootstrap-sb-admin-2-gh-pages/js/demo/datatables-demo.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable();
+        });
+    </script>
+
+</body>
+
+</html>
+
+
