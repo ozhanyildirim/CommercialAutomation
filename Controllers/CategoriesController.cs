@@ -10,8 +10,10 @@ namespace TicariOtomasyon.Controllers
 {
     public class CategoriesController : Controller
     {
+      
         Context db = new Context();
         // GET: Categories
+ 
         public ActionResult Index()
         {
             var values = db.Categories.ToList();

@@ -7,6 +7,7 @@ using TicariOtomasyon.Models.Class;
 
 namespace TicariOtomasyon.Controllers
 {
+  
     public class ProductController : Controller
     {
         Context db = new Context();
