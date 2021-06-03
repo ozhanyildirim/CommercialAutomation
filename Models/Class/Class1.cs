@@ -10,7 +10,7 @@ namespace TicariOtomasyon.Models.Class
         public IEnumerable<Product> Val1 { get; set; }
         public IEnumerable<ProductDescriptions> Val2 { get; set; }
 
-        public IEnumerable<Sales> Val3 { get; set; }
+         public IEnumerable<Sales> Val3 { get; set; }
 
     }
 }
