@@ -2394,6 +2394,9 @@
     <Content Include="Views\HomePage\AboutUs.cshtml" />
     <Content Include="Views\HomePage\Products.cshtml" />
     <Content Include="Views\HomePage\Contact.cshtml" />
+    <Content Include="Views\HomePage\ProductsCharger.cshtml" />
+    <Content Include="Views\HomePage\ProductsBattery.cshtml" />
+    <Content Include="Views\HomePage\ProductsHeadset.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -24,6 +24,19 @@ namespace TicariOtomasyon.Controllers
         {
             return View();
         }
+        public ActionResult ProductsCharger()
+        {
+            return View();
+        }
+        public ActionResult ProductsBattery()
+        {
+            return View();
+        }
+        public ActionResult ProductsHeadset()
+        {
+            return View();
+        }
+
 
         public ActionResult Contact()
         {

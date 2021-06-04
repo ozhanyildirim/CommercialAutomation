@@ -640,20 +640,20 @@ a:focus {
 }
 
 .contact_section input::-webkit-input-placeholder {
-  color: #1c1b1b;
+  color: #999;
 }
 
-.contact_section input:-ms-input-placeholder {
-  color: #1c1b1b;
-}
+    .contact_section input:-ms-input-placeholder {
+        color: #999;
+    }
 
-.contact_section input::-ms-input-placeholder {
-  color: #1c1b1b;
-}
+    .contact_section input::-ms-input-placeholder {
+        color: #999;
+    }
 
-.contact_section input::placeholder {
-  color: #1c1b1b;
-}
+    .contact_section input::placeholder {
+        color: #999;
+    }
 
 .contact_section input.message-box {
   height: 120px;

@@ -54,7 +54,17 @@
                             <a class="nav-link" href="/HomePage/Index/">ana sayfa <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/HomePage/Products/"> ürünler </a>
+                            <div class="dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    ÜRÜNLER
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="/HomePage/Products/">Cep Telefonu</a>
+                                    <a class="dropdown-item" href="/HomePage/ProductsCharger/">Şarj Cihazı</a>
+                                    <a class="dropdown-item" href="/HomePage/ProductsHeadset/">Kulaklık</a>
+                                    <a class="dropdown-item" href="/HomePage/ProductsBattery/">Batarya</a>
+                                </div>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/HomePage/AboutUs/"> hakkımızda </a>
@@ -75,33 +85,29 @@
     </header>
 
 
-    <section class="contact_section" style="background-color:#000201">
+    <section class="contact_section" >
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form_container">
-                        <div class="heading_container mt-4" style="color:white !important" >
+                        <div class="heading_container mt-4" >
                             <h2>
                                 İletişim
                             </h2>
                         </div>
-                        <form action="" style="color:white ">
+                        <form action="" >
                             <div>
-                                <div style="margin-bottom:5px">Ad Soyad</div>
-                          
+
                                 <input type="text" placeholder="Ad Soyad" style="color:white " />
                             </div>
                             <div style="color:white !important">
-                                <div style="margin-bottom:5px">Mail Adresi</div>
                                 <input type="email" placeholder="Mail Adresi" style="color:white " />
                             </div>
                             <div>
-                                <div style="margin-bottom:5px">Telefon Numarası</div>
                                 <input type="text" placeholder="Telefon Numarası" style="color:white " />
                             </div>
                             <div style="color:white !important">
-                                <div style="margin-bottom:5px">Mesajınız</div>
-                                <input type="text" class="message-box" placeholder="Mesajınız" style="color:white "/>
+                                <input type="text" class="message-box" placeholder="Mesajınız" style="color:white " />
                             </div>
                             <div class="d-flex " style="color:white !important">
                                 <button style="background-color:#841574; border-color:#841574">
@@ -119,6 +125,7 @@
             </div>
         </div>
     </section>
+    <br />
     <footer class="footer_section" style="background-color:#000201">
         <div class="container">
             <div class="row">
@@ -183,4 +190,21 @@
             </div>
         </div>
     </footer>
+
+
+    <!-- jQery -->
+    <script src="~/WebLayout/default page/js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <!-- bootstrap js -->
+    <script src="~/WebLayout/default page/js/bootstrap.js"></script>
+    <!-- owl slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <!-- custom js -->
+    <script src="~/WebLayout/default page/js/custom.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+    <!-- End Google Map -->
 </body>

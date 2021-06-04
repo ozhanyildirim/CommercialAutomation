@@ -61,7 +61,17 @@
                                 <a class="nav-link" href="/HomePage/Index/">Ana Sayfa <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/HomePage/Products/"> Ürünler </a>
+                                <div class="dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        ÜRÜNLER
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="/HomePage/Products/">Cep Telefonu</a>
+                                        <a class="dropdown-item" href="/HomePage/ProductsCharger/">Şarj Cihazı</a>
+                                        <a class="dropdown-item" href="/HomePage/ProductsHeadset/">Kulaklık</a>
+                                        <a class="dropdown-item" href="/HomePage/ProductsBattery/">Batarya</a>
+                                    </div>
+                                </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/HomePage/AboutUs/"> Hakkımızda </a>
@@ -82,6 +92,7 @@
         </header>
         <!-- end header section -->
         <!-- slider section -->
+
         <section class="slider_section  " style="background-color:#000201">
             <div id="customCarousel1" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
