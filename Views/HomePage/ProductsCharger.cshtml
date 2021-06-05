@@ -1,8 +1,10 @@
-﻿
+﻿@using TicariOtomasyon.Models.Class
+@model List<Product>
 @{
     Layout = null;
 }
 
+@{ string color = "";}
 <!DOCTYPE html>
 
 
@@ -114,7 +116,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6 ">
-                    <div class="box"  style="background-color:#f0f8ff">
+                    <div class="box">
                         <a href="">
                             <div class="img-box">
                                 <img src="https://s.turkcell.com.tr//SiteAssets/Cihaz/aksesuar/xiaomi/hizli-kablosuz-sarj-cihazi-10w/cg/3.png" alt="">
@@ -138,156 +140,55 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box" style="background-color:#f0f8ff">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/b44881f4-0d27-4fbb-8878-30ae45d08f1b/xiaomi-mdy-08-9-12-volt-2-5-amper-hizli-sarj-cihazi-micro-usb-kablo-1755-removebg-preview.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Type-C
-                                </h6>
-                                <h6>
-                                    Fiyat:
+                @foreach (var item in Model)
+                {
+                    if (item.ProductBrand == "Apple")
+                    {
+                        color = "background-color:indianred";
+                    }
+                    else if (item.ProductBrand == "Samsung")
+                    {
+                        color = "background-color:darkorchid";
+                    }
+                    else if (item.ProductBrand == "Xiaomi")
+                    {
+                        color = "background-color:orangered";
+                    }
+                    else if (item.ProductBrand == "Huawei")
+                    {
+                        color = "background-color:dodgerblue";
+                    }
+
+                    else
+                    {
+                        color = "background-color:#f0d43a";
+                    }
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="box">
+                            <a href="" style="pointer-events: none;">
+                                <div class="img-box">
+                                    <img src="@item.ProductImage" alt="">
+                                </div>
+                                <div class="detail-box">
+                                    <h6>
+                                        @item.ProductName
+                                    </h6>
+                                    <h6>
+                                        Fiyat:
+                                        <span>
+                                            @item.SalePrice
+                                        </span>
+                                    </h6>
+                                </div>
+                                <div class="new" style="@color">
                                     <span>
-                                        89.99 TL
+                                        @item.ProductBrand
                                     </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:orangered">
-                                <span>
-                                    Xiaomi
-                                </span>
-                            </div>
-                        </a>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box" style="background-color:#f0f8ff">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/c9669bce-e3e4-4329-ab65-906561d5c88d/huawei-super-charge-hizli-sarj-aleti-type-c-kablo-1250577-11-B-removebg-preview.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Type-C
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        129.99 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:dodgerblue">
-                                <span>
-                                    Huawei
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box" style="background-color:#f0f8ff">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/2cfd3d62-3b67-41ec-b458-0cd2526e1449/bn-original-iphone-uyumlu-kablo---adaptor-sarj-aleti-seti-kc6192632-1-7960f0cfc60a4cd9bd8759826b9a0951-removebg-preview.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    iPhone 8 Şarj
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        199.99 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:indianred">
-                                <span>
-                                    Apple
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box" style="background-color:#f0f8ff">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/d3ed97f3-902d-48c4-b161-a274635e2f77/110000013418679-removebg-preview.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Micro Şarj 
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        49.99 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:darkorchid">
-                                <span>
-                                    Samsung
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6  col-xl-3">
-                    <div class="box" style="background-color:#f0f8ff">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/b37300f2-3dc7-45e9-ab24-27994b562398/612193446_0-removebg-preview.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    iPhone 12 Şarj
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        9.999 tl
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:indianred">
-                                <span>
-                                    Apple
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box" style="background-color:#f0f8ff">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://s.turkcell.com.tr/SiteAssets/Cihaz/aksesuar/Samsung/type-c-hizli-seyahat-sarj-aleti/cg/1.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Type-C Şarj
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        199.99 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:darkorchid">
-                                <span>
-                                    Samsung
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                }
             </div>
             <div class="btn-box">
                 <a href="" style="background-color:#841574; border-color:#841574">

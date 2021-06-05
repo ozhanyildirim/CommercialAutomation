@@ -5,13 +5,32 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+
+
+
 <h2>Ürün Listesi </h2>
+<br />
+@using (Html.BeginForm("Index", "Product", FormMethod.Get))
+{
+
+    <p>
+        Ürün Adı : <input name="p" />
+        <input class="btn-sm btn-primary" type="submit" value="Ara" />
+    </p>
+}
+<br />
+
+<a href="/Product/AddProduct/" class="btn btn-outline-primary">Yeni Ürün Ekle</a>
+<table class="table table-bordered">
+</table>
+
+
 
 
 
 @foreach (var item in Model)
 {
-    <div class="card shadow float-left mr-3 mb-3" style="width:14rem;">
+    <div class="card shadow float-left mr-3 mb-3 col-sm-8 col-xl-2 " style="width:900px; height:700px;">
         <div class="card-header py-3">
             <span class="m-0 font-weight-bold text-primary"> @item.ProductName</span>
         </div>
@@ -23,7 +42,7 @@
             <p> Alış Fiyat : @item.PurchasePrice </p>
             <p> Satış Fiyat : @item.SalePrice </p>
             <p> Stok  : @item.ProductStock </p>
-             <a href="/Product/DeleteProduct/@item.ProductID" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+            <a href="/Product/DeleteProduct/@item.ProductID" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
 
             <a href="/Product/GetProduct/@item.ProductID" class="btn btn-warning btn-icon-split ">
                 <span class="icon ">
@@ -36,6 +55,3 @@
 
     </div>
 }
-<table class="table table-bordered">
-</table>
-<a href="/Product/AddProduct/" class="btn btn-outline-primary">Yeni Ürün Ekle</a>

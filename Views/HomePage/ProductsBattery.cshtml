@@ -1,8 +1,10 @@
-﻿
+﻿@using TicariOtomasyon.Models.Class
+@model List<Product>
 @{
     Layout = null;
 }
-    <!DOCTYPE html>
+@{ string color = "";}
+<!DOCTYPE html>
 
 
 <head>
@@ -115,7 +117,7 @@
                     <div class="box">
                         <a href="">
                             <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/07d89b56-e84f-4c23-8bc7-6505e48a8861/iphone-5s-batarya-degisim-m0z9obg-b-removebg-preview.png" alt="">
+                                <img src="https://i.hizliresim.com/bsr6ztp.png" alt="">
                             </div>
                             <div class="detail-box">
                                 <h6>
@@ -136,156 +138,55 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/5cf16742-fde6-491f-889b-4987bbb40feb/xiaomi-redmi-note-8-pro-batarya_Ydnek17P-removebg-preview.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Redmi Note 9
-                                </h6>
-                                <h6>
-                                    Fiyat:
+             
+                @foreach (var item in Model)
+                {
+                    if (item.ProductBrand == "Apple")
+                    {
+                        color = "background-color:indianred";
+                    }
+                    else if (item.ProductBrand == "Samsung")
+                    {
+                        color = "background-color:darkorchid";
+                    }
+                    else if (item.ProductBrand == "Xiaomi")
+                    {
+                        color = "background-color:orangered";
+                    }
+                    else if (item.ProductBrand == "Huawei")
+                    {
+                        color = "background-color:dodgerblue";
+                    }
+                    else
+                    {
+                        color = "background-color:#f0d43a";
+                    }
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="box">
+                            <a href="" style="pointer-events: none;">
+                                <div class="img-box">
+                                    <img src="@item.ProductImage" alt="">
+                                </div>
+                                <div class="detail-box">
+                                    <h6>
+                                        @item.ProductName
+                                    </h6>
+                                    <h6>
+                                        Fiyat:
+                                        <span>
+                                            @item.SalePrice
+                                        </span>
+                                    </h6>
+                                </div>
+                                <div class="new" style="@color">
                                     <span>
-                                        139.99 TL
+                                        @item.ProductBrand
                                     </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:orangered">
-                                <span>
-                                    Xiaomi
-                                </span>
-                            </div>
-                        </a>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/06ef1dea-46fe-44ec-9276-1178fb2c15aa/huawei-g8-batarya_Cly35ay5-removebg-preview.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    P20 Lite
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        129.99 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:dodgerblue">
-                                <span>
-                                    Huawei
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/542b16f6-4cfb-48e3-8554-80398db1978f/bpi-ip021-removebg-preview.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    iPhone X
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        299.99 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:indianred">
-                                <span>
-                                    Apple
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/87ecf3b0-a94d-41bf-9199-ca8b307fe50f/9570355642418-removebg-preview.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    J3/J5/J7
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        99.99 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:darkorchid">
-                                <span>
-                                    Samsung
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6  col-xl-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/dc6e59e9-cde2-4a2a-a456-ae9b25f55506/iphone-11-orjinal-batarya__0519766178646270-removebg-preview.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    iPhone 11
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        399.99 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:indianred">
-                                <span>
-                                    Apple
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/12093ca1-8cf5-4b9b-a5bf-e8e7aae2b248/1_org_zoom-removebg-preview.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Note 10+
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        299.99 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:darkorchid">
-                                <span>
-                                    Samsung
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                }
             </div>
             <div class="btn-box">
                 <a href="" style="background-color:#841574; border-color:#841574">

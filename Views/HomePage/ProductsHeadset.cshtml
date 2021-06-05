@@ -1,8 +1,10 @@
-﻿
+﻿@using TicariOtomasyon.Models.Class
+@model List<Product>
 @{
     Layout = null;
 }
 
+@{ string color = "";}
 
 <!DOCTYPE html>
 
@@ -116,111 +118,11 @@
                     <div class="box">
                         <a href="">
                             <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/cf8b41d3-eecd-446b-8902-28627a63d2af/airpods-removebg-preview.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Airpods
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        1299 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:indianred">
-                                <span>
-                                    Apple
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/d16c886f-aa33-4ebc-80dc-ee2cb1a6963f/xiaomi_redmi_airdots_s_tws_kablosuz_bluetooth_kulakl_k-2_1-removebg-preview.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Mi Dots
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        110.99 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:orangered">
-                                <span>
-                                    Xiaomi
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/b8d21238-90ea-423a-aecf-46c9d61585fe/huawei-freebuds-4i-anc-aktif-gurultu-onleyici-tws-kablosuz-kulak-ici-siyah-z-removebg-preview.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    FreeBuds
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        669.99 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:dodgerblue">
-                                <span>
-                                    Huawei
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/757183a7-b1fb-4153-956a-213370c9207e/orjinal-iphone-7-8-x-mikrofonlu-kulaklik-lightning-kablolu-kulaklik-kc6246113-1-ee1a1d7effe547e5abe952afb20994c2-removebg-preview.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    iPhone 7/8
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        179.99 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:indianred">
-                                <span>
-                                    Apple
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
                                 <img src="https://images.samsung.com/is/image/samsung/tr/galaxy-s20/gallery/tr-galaxy-buds-plus-r175-sm-r175nzkatur-frontblack-208972984?$720_576_PNG$" alt="">
                             </div>
                             <div class="detail-box">
                                 <h6>
-                                    Samsung Buds
+                                    Ear Buds
                                 </h6>
                                 <h6>
                                     Fiyat:
@@ -237,61 +139,58 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-sm-6  col-xl-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/56d5dc8b-b371-4168-9cb4-831575db082e/9829480136754-removebg-preview.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    iPhone 4/5/6
-                                </h6>
-                                <h6>
-                                    Fiyat:
+                @foreach (var item in Model)
+                {
+                    if (item.ProductBrand == "Apple")
+                    {
+                        color = "background-color:indianred";
+                    }
+                    else if (item.ProductBrand == "Samsung")
+                    {
+                        color = "background-color:darkorchid";
+                    }
+                    else if (item.ProductBrand == "Xiaomi")
+                    {
+                        color = "background-color:orangered";
+                    }
+                    else if (item.ProductBrand == "Huawei")
+                    {
+                        color = "background-color:dodgerblue";
+                    }
+
+                    else
+                    {
+                        color = "background-color:#f0d43a";
+                    }
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="box">
+                            <a href="" style="pointer-events: none;">
+                                <div class="img-box">
+                                    <img src="@item.ProductImage" alt="">
+                                </div>
+                                <div class="detail-box">
+                                    <h6>
+                                        @item.ProductName
+                                    </h6>
+                                    <h6>
+                                        Fiyat:
+                                        <span>
+                                            @item.SalePrice
+                                        </span>
+                                    </h6>
+                                </div>
+                                <div class="new" style="@color">
                                     <span>
-                                        119.99 tl
+                                        @item.ProductBrand
                                     </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:indianred">
-                                <span>
-                                    Apple
-                                </span>
-                            </div>
-                        </a>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://o.remove.bg/downloads/fd101e88-6a80-44fa-9fdc-e3f0110f8490/v2-83955_large-removebg-preview.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Mikrofonlu
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        59.99 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:darkorchid">
-                                <span>
-                                    Samsung
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                }
             </div>
             <div class="btn-box">
-                <a href="" style="background-color:#841574; border-color:#841574">
-                    Diğer Ürünler
-                </a>
+             
             </div>
         </div>
     </section>

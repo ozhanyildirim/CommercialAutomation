@@ -12,10 +12,14 @@ namespace TicariOtomasyon.Controllers
     {
         Context db = new Context();
         // GET: Product
-        public ActionResult Index()
+        public ActionResult Index(string p )
         {
-            var product = db.Products.Where(x => x.Status == true).ToList();
-            return View(product);
+            var product = from x in db.Products select x;
+            if (!string.IsNullOrEmpty(p))
+            {
+                product = product.Where(y => y.ProductName.Contains(p) || y.ProductBrand.Contains(p));
+            }
+            return View(product.Where(a=>a.Status==true).ToList());
         }
        
         

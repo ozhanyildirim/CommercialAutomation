@@ -1,7 +1,10 @@
-﻿
+﻿@using TicariOtomasyon.Models.Class
+@model List<Product>
 @{
     Layout = null;
 }
+
+@{ string color = "";}
 
 <!DOCTYPE html>
 
@@ -107,7 +110,7 @@
             <div class="row">
                 <div class="col-md-6 ">
                     <div class="box">
-                        <a href="">
+                        <a href="" style="pointer-events: none;">
                             <div class="img-box">
                                 <img src="https://productimages.hepsiburada.net/s/64/375/110000005722889.jpg" alt="">
                             </div>
@@ -130,161 +133,60 @@
                         </a>
                     </div>
                 </div>
+                
+                @foreach (var item in Model)
+                {
+                    if(item.ProductBrand == "Apple")
+                    {
+                        color = "background-color:indianred";
+                    }
+                    else if(item.ProductBrand == "Samsung")
+                    {
+                        color = "background-color:darkorchid";
+                    }
+                    else if(item.ProductBrand == "Xiaomi")
+                    {
+                        color = "background-color:orangered";
+                    }
+                    else if(item.ProductBrand == "Huawei")
+                    {
+                        color = "background-color:dodgerblue";
+                    }
+                    else
+                    {
+                        color = "background-color:#f0d43a";
+                    }
                 <div class="col-sm-6 col-xl-3">
                     <div class="box">
-                        <a href="">
+                        <a href="" style="pointer-events: none;">
                             <div class="img-box">
-                                <img src="https://cdn.akakce.com/xiaomi/xiaomi-redmi-note-9-128-gb-z.jpg" alt="">
+                                <img src="@item.ProductImage" alt="">
                             </div>
                             <div class="detail-box">
                                 <h6>
-                                    Redmi Note 9
+                                    @item.ProductName
                                 </h6>
                                 <h6>
                                     Fiyat:
                                     <span>
-                                        2.199 TL
+                                        @item.SalePrice
                                     </span>
                                 </h6>
                             </div>
-                            <div class="new" style="background-color:orangered">
+                            <div class="new" style="@color">
                                 <span>
-                                    Xiaomi
+                                    @item.ProductBrand
                                 </span>
                             </div>
                         </a>
                     </div>
                 </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://cdn.cimri.io/image/1000x1000/huaweiplitegbnmpakllceptelefonu_75210374.jpg" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    P20 Lite
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        3.333 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:dodgerblue">
-                                <span>
-                                    Huawei
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://www.kazimkulturvize.com/wp-content/uploads/revslider/main_slider/iphone-7-plus.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    iPhone 8 Plus
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        4500 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:indianred">
-                                <span>
-                                    Apple
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/samsung/thumb/galaxy-s20-plus-gorseli-106094_large.jpg" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    S20 Dual Sim
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        5.965 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:darkorchid">
-                                <span>
-                                    Samsung
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6  col-xl-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://yorumbudur.com/content/icerik/big/apple-iphone-x-64-gb-5-8-inc-12-mp-akilli-cep-telefonu-uzay-grisi_yorumbudurcom.jpg" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    iPhone X
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        9.999 tl
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:indianred">
-                                <span>
-                                    Apple
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/samsung/thumb/117735-ana_large.jpg" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    S21 Ultra
-                                </h6>
-                                <h6>
-                                    Fiyat:
-                                    <span>
-                                        15.999 TL
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new" style="background-color:darkorchid">
-                                <span>
-                                    Samsung
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                }
             </div>
+               
+
             <div class="btn-box">
-                <a href="" style="background-color:#841574; border-color:#841574">
-                    Diğer Ürünler
-                </a>
+               
             </div>
         </div>
     </section>
