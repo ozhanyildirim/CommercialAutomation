@@ -130,6 +130,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\CurrentController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
@@ -148,6 +149,7 @@
     <Compile Include="Models\Class\Admin.cs" />
     <Compile Include="Models\Class\Categories.cs" />
     <Compile Include="Models\Class\Class1.cs" />
+    <Compile Include="Models\Class\Contact.cs" />
     <Compile Include="Models\Class\Context.cs" />
     <Compile Include="Models\Class\Current.cs" />
     <Compile Include="Models\Class\Department.cs" />
@@ -2400,6 +2402,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

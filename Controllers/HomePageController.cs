@@ -44,10 +44,18 @@ namespace TicariOtomasyon.Controllers
             var values = db.Products.Where(x => x.Status == true && x.Categories.CategoriesName == "Kulaklık").ToList();
             return View(values);
         }
-
-
+        [HttpGet]
         public ActionResult Contact()
         {
+            
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Contact(Contact c)
+        {
+            c.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
+            db.Contacts.Add(c);
+            db.SaveChanges();
             return View();
         }
 

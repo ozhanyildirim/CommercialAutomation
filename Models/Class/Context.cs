@@ -18,6 +18,7 @@ namespace TicariOtomasyon.Models.Class
         public DbSet<Receipt> Receipts { get; set; }
         public DbSet<ReceiptTrans> ReceiptTrans { get; set; }
         public DbSet<Sales> Sales { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
         public DbSet<ProductDescriptions> ProductDescriptions { get; set; }
     }
