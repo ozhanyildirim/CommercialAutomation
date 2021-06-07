@@ -11,6 +11,10 @@ Home Page
 
 ![CommercialAutomation](https://i.hizliresim.com/ds7swc1.png)
 
+Continuation of the Home Page
+
+![CommercialAutomation](https://i.hizliresim.com/qdql2gt.png)
+
 Products Page
 
 ![CommercialAutomation](https://i.hizliresim.com/hxxjy59.png)
