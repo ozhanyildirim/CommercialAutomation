@@ -15,6 +15,9 @@ Products Page
 
 ![CommercialAutomation](https://i.hizliresim.com/hxxjy59.png)
 
+AboutUs Page
+
+![CommercialAutomation](https://i.hizliresim.com/3iavync.png)
 
 Admin Page
 
