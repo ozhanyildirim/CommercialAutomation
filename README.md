@@ -23,9 +23,9 @@ AboutUs Page
 
 ![CommercialAutomation](https://i.hizliresim.com/3iavync.png)
 
-Admin Page
+Admin Page (Statics)
 
-![CommercialAutomation](https://i.hizliresim.com/8zqdvb5.png)
+![CommercialAutomation](https://i.hizliresim.com/2wc9xnv.png)
 
 Login Page
 
