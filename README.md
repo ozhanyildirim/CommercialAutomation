@@ -22,4 +22,4 @@ Admin Page
 
 Login Page
 
-![CommercialAutomation](https://i.hizliresim.com/rebxy33.png)
+![CommercialAutomation](https://i.hizliresim.com/ruqoco3.png)
