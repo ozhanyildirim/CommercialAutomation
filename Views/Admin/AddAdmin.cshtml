@@ -1,0 +1,19 @@
+﻿@model TicariOtomasyon.Models.Class.Admin
+@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2> Yeni Admin Ekle </h2>
+
+<hr />
+<br />
+
+<form class="form-group" method="post">
+    <label>Kullanıcı Adı</label>
+    @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+    <label>Şifre</label>
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+
+    <button class="btn btn-primary" style="margin-top:15px">Kullanıcı Ekle</button>
+</form>

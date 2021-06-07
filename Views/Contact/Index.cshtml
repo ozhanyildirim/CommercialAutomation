@@ -1,0 +1,40 @@
+﻿@using TicariOtomasyon.Models.Class
+@model List<Contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Gelen Kutusu</h2>
+<br />
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Kullanıcı Adı</th>
+            <th scope="col">Mail</th>
+            <th scope="col">Telefon</th>
+            <th scope="col">Mesaj</th>
+            <th scope="col">Tarih</th>
+            <th scope="col">Sil</th>
+        </tr>
+    </thead>
+    @foreach (var x in Model)
+    {
+     
+        <tbody>
+            <tr>
+                <td>@x.ContactID</td>
+                <td>@x.Username</td>
+                <td>@x.Email</td>
+                <td>@x.Phone</td>
+                <td>@x.Message</td>
+                <td>@x.Date</td>
+                <td><a class="btn btn-danger" href="/Contact/DeleteContact/@x.ContactID">Sil</a></td>
+
+            </tr>
+
+        </tbody>
+    }
+</table>

@@ -18,8 +18,9 @@ namespace TicariOtomasyon.Controllers
         }  
         public ActionResult DeleteContact(int id)
         {
-            var del = db.Products.Find(id);
-            db.Products.Remove(del);
+            var del = db.Contacts.Find(id);
+            db.Contacts.Remove(del);
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
         

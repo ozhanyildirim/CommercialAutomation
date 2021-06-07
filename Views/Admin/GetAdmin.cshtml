@@ -1,0 +1,24 @@
+﻿@model TicariOtomasyon.Models.Class.Admin
+@{
+    ViewBag.Title = "GetAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kullanıcı Düzenle </h2>
+
+<hr />
+<br />
+
+@using (Html.BeginForm("EditAdmin", "Admin", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.AdminID)
+    <label>Kullanıcı Adı </label>
+    @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+    <br />
+    <label>Şifre </label>
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+
+</div>
+    <button class="btn btn-outline-success" style="margin-top:15px">Kullanıcı Düzenle</button>
+}

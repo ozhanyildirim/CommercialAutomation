@@ -1,0 +1,38 @@
+﻿@using TicariOtomasyon.Models.Class
+@model List<Admin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Admin Sayfası</h2>
+<br />
+
+
+<table class="table table-bordered" style="margin-top:20px;  margin-right:20px;">
+    <tr>
+        <th>Admin Adı</th>
+        <th>Admin Şifre</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+   
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Username</td>
+            <td>@item.Password</td>
+            <td><a href="/Admin/DeleteAdmin/@item.AdminID" class="btn btn-danger"> Sil  </a></td>
+            <td><a href="/Admin/GetAdmin/@item.AdminID" class="btn btn-warning">Güncelle</a></td>
+
+        </tr>
+    }
+
+</table>
+
+<a href="/Admin/AddAdmin/" class="btn btn-outline-primary">Yeni Admin Ekle</a>
+
+
+
